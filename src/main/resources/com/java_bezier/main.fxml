@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.java_bezier.DrawingCanvas?>
+<?import com.java_bezier.PointsTable?>
+<?import javafx.scene.layout.HBox?>
+<fx:root type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml"
+         prefHeight="530.0" prefWidth="825.0" >
+    <HBox spacing="5">
+        <PointsTable fx:id="pointsTable" prefWidth="500"/>
+        <DrawingCanvas fx:id="drawingCanvas"/>
+    </HBox>
+
+</fx:root>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml" spacing="5">
+
+    <StackPane style="-fx-background-color: gainsboro; -fx-border-color: black">
+        <Canvas fx:id="canvas" width="500" height="500"/>
+    </StackPane>
+    <CheckBox text="Plot Bezier curve" fx:id="drawBezier" onAction="#checkBoxSwitch"/>
+
+</fx:root>
