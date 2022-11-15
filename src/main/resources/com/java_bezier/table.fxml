@@ -26,7 +26,7 @@
                    GridPane.rowIndex="0" prefWidth="60"/>
         <TextField fx:id="weight" promptText="Weight" GridPane.columnIndex="2"
                    GridPane.rowIndex="0" maxWidth="60"/>
-        <Label fx:id="labelDelete" GridPane.columnIndex="0" GridPane.rowIndex="1"
+        <Label fx:id="deleteButtonLabel" GridPane.columnIndex="0" GridPane.rowIndex="1"
         GridPane.columnSpan="3" alignment="BASELINE_RIGHT"/>
         <Button text="Add" onAction="#addPoint" GridPane.columnIndex="3"
                 GridPane.rowIndex="0"/>

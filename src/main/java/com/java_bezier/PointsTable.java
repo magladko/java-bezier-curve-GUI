@@ -5,39 +5,53 @@ import com.java_bezier.models.PointsSingleton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * PointsTable manages whole context related to the TableView component,
+ * such as adding new points, deleting selected or clearing whole table.
+ * PointsTable is used in the table.fxml file as a root controller.
+ */
 public class PointsTable extends VBox {
     @FXML private TableView<Point> tableView;
     @FXML private TextField x;
     @FXML private TextField y;
     @FXML private TextField weight;
-    @FXML private Label labelDelete;
+    @FXML private Label deleteButtonLabel;
 
+    /**
+     * Default constructor implements FXML resource loading and
+     * initializes PointsSingleton class with a reference to a list in the TableView object.
+     *
+     * @see PointsSingleton
+     * @see TableView
+     */
     public PointsTable() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                .getResource("table.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("table.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        labelDelete.setText("Delete selected point: ");
 
-        PointsSingleton.getInstance(tableView.getItems());
+        deleteButtonLabel.setText("Delete selected point: ");
+        PointsSingleton.initializeWithReference(tableView.getItems());
     }
 
+    /**
+     * Manages adding new point to the table based on the values in the TextFields.
+     * Ignores incorrect data.
+     *
+     * @see TextField
+     */
     @FXML
-    public void addPoint(ActionEvent event) {
+    public void addPoint() {
         if (x.getText() == null || Objects.equals(x.getText(), "") ||
                 y.getText() == null || Objects.equals(x.getText(), "") ||
                 weight.getText() == null || Objects.equals(x.getText(), "")) return;
@@ -54,14 +68,20 @@ public class PointsTable extends VBox {
         weight.setText("");
     }
 
+    /**
+     * Removes point from the model.
+     */
     @FXML
-    public void deletePoint(ActionEvent event) {
+    public void deletePoint() {
         Point point = tableView.getSelectionModel().getSelectedItem();
         tableView.getItems().remove(point);
     }
 
+    /**
+     * Clears all the points from the model.
+     */
     @FXML
-    public void clearAllPoints(ActionEvent event) {
+    public void clearAllPoints() {
         tableView.getItems().clear();
     }
 }

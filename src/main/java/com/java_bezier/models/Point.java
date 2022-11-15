@@ -2,6 +2,16 @@ package com.java_bezier.models;
 
 import javafx.beans.property.SimpleDoubleProperty;
 
+/**
+ * Point is a model class used for managing the data exchange inside controllers and between them.
+ * The property type is used for facilitating communication with javafx TableView component.
+ * Point stores information about position in 2D and weight which is used for calculating Bézier curve.
+ *
+ * @see com.java_bezier.DrawingCanvas
+ * @see com.java_bezier.PointsTable
+ * @see javafx.scene.control.TableView
+ * @see SimpleDoubleProperty
+ */
 public class Point {
     private final SimpleDoubleProperty x = new SimpleDoubleProperty();
     private final SimpleDoubleProperty y = new SimpleDoubleProperty();
@@ -29,15 +39,15 @@ public class Point {
         return y.get();
     }
 
-    public void setY(Double fName) {
-        y.set(fName);
+    public void setY(Double y) {
+        this.y.set(y);
     }
 
     public Double getWeight() {
         return weight.get();
     }
 
-    public void setWeight(Double fName) {
-        weight.set(fName);
+    public void setWeight(Double weight) {
+        this.weight.set(weight);
     }
 }

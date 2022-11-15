@@ -6,6 +6,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Project initialization class.
+ * The key role is to initialize new window with established content.
+ *
+ * @link <a href="https://openjfx.io/openjfx-docs/">javafx documentation</a>
+ */
 public class JavaBezierApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {

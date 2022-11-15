@@ -6,6 +6,10 @@ import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 
+/**
+ * MainComponent contains PointsTable and DrawingCanvas.
+ * It connects both mentioned components in a single scene.
+ */
 public class MainComponent extends HBox {
 
     @FXML private PointsTable pointsTable;
