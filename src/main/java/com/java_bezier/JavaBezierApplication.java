@@ -10,7 +10,7 @@ import java.io.IOException;
  * Project initialization class.
  * The key role is to initialize new window with established content.
  *
- * @link <a href="https://openjfx.io/openjfx-docs/">javafx documentation</a>
+ * @see <a href="https://openjfx.io/openjfx-docs/">Javafx docs</a>
  */
 public class JavaBezierApplication extends Application {
     @Override

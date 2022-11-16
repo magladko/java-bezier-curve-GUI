@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * CustomBezier holds methods used for calculating data for the Bézier curve.
  */
-public class CustomBezier {
+public abstract class CustomBezier {
 
     /**
      * Calculates factorial of the given integer.
@@ -24,7 +24,7 @@ public class CustomBezier {
 
     /**
      * Calculates Bezier polynomial.
-     * @link <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">Bezier curve theory</a>
+     * @see <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">Bezier curve theory</a>
      */
     private static Double BezierPoly(Integer i, Integer n, Double u) {
         if (i < 0 || i > n) return 0.;
@@ -40,7 +40,7 @@ public class CustomBezier {
      * @param precisionStep Step used for calculating points on the curve. The smaller, the more precise the output will be.
      *                      Should be in the range (0, 1).
      * @return list of coordinates approximated for the Bézier curve
-     * @link <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">Bezier curve theory</a>
+     * @see <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">Bezier curve theory</a>
      */
     public static List<SimplePoint> calculateBezierCurve(List<Point> points, Double precisionStep) {
         List<SimplePoint> result = new ArrayList<>();

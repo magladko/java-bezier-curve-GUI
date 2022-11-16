@@ -12,9 +12,18 @@ import java.io.IOException;
  */
 public class MainComponent extends HBox {
 
+    /**
+     * FXML context for table of points component.
+     */
     @FXML private PointsTable pointsTable;
-    @FXML private DrawingCanvas drawingCanvas;
+    /**
+     * FXML context for canvas and drawing Bézier curve checkbox.
+     */
+    @FXML private DrawingCanvas drawingCanvas;  // drawing canvas context
 
+    /**
+     * Initialize MainComponent class to load resources.
+     */
     public MainComponent() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main.fxml"));
         fxmlLoader.setRoot(this);

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.java_bezier","l":"com.java_bezier"},{"m":"com.java_bezier","l":"com.java_bezier.models"},{"m":"com.java_bezier","l":"com.java_bezier.utils"}];updateSearchResults();

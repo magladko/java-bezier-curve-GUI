@@ -28,10 +28,26 @@ import java.util.List;
  * @see PointsSingleton
  */
 public class DrawingCanvas extends VBox {
+    /**
+     * Canvas context used for drawing.
+     */
     @FXML private Canvas canvas;
+
+    /**
+     * The checkbox context that shows and hides Bézier curve on the canvas.
+     */
     @FXML private CheckBox drawBezier;
+    /**
+     * The main color used for drawing on canvas.
+     */
     private final Color drawColor;
+    /**
+     * The graphics context connected with canvas context, used for drawing.
+     */
     private final GraphicsContext gc;
+    /**
+     * The thickness of points drawn on canvas.
+     */
     private final Integer pointThickness = 4;
 
     /**
@@ -63,6 +79,12 @@ public class DrawingCanvas extends VBox {
             }
         });
     }
+
+    /**
+     * Returns the context of canvas object.
+     *
+     * @return canvas context
+     */
     public Canvas getCanvas() {
         return canvas;
     }

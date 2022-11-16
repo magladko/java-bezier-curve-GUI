@@ -17,10 +17,25 @@ import java.util.Objects;
  * PointsTable is used in the table.fxml file as a root controller.
  */
 public class PointsTable extends VBox {
+    /**
+     * FXML context for the TableView used for dataflow.
+     */
     @FXML private TableView<Point> tableView;
+    /**
+     * FXML context for the new point's <i>x</i> coordinate input.
+     */
     @FXML private TextField x;
+    /**
+     * FXML context for the new point's <i>y</i> coordinate input.
+     */
     @FXML private TextField y;
+    /**
+     * FXML context for the new point's <i>weight</i> input.
+     */
     @FXML private TextField weight;
+    /**
+     * FXML context for the delete button label.
+     */
     @FXML private Label deleteButtonLabel;
 
     /**
