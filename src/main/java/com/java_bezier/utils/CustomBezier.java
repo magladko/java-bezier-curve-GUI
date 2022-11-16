@@ -24,13 +24,8 @@ public class CustomBezier {
 
     /**
      * Calculates Bezier polynomial.
-     *
-     * @param i
-     * @param n
-     * @param u
-     * @return
      */
-    public static Double BezierPoly(Integer i, Integer n, Double u) {
+    private static Double BezierPoly(Integer i, Integer n, Double u) {
         if (i < 0 || i > n) return 0.;
         if (i == 0) return Math.pow(1 - u, n);
         return CustomBezier.factorial(n) * Math.pow(u, i) * Math.pow(1 - u, n - i) /
@@ -40,9 +35,10 @@ public class CustomBezier {
     /**
      * Calculates Bézier curve points with the given precision.
      *
-     * @param points
-     * @param precisionStep
-     * @return
+     * @param points The list of points used to calculate coordinates for the points contained in a curve,
+     * @param precisionStep Step used for calculating points on the curve. The smaller, the more precise the output will be.
+     *                      Should be in the range (0, 1).
+     * @return list of coordinates approximated for the Bézier curve
      */
     public static List<SimplePoint> calculateBezierCurve(List<Point> points, Double precisionStep) {
         List<SimplePoint> result = new ArrayList<>();

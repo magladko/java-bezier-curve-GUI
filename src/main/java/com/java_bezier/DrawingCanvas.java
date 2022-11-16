@@ -114,7 +114,7 @@ public class DrawingCanvas extends VBox {
     private void drawBezier() {
         gc.setFill(drawColor);
         List<SimplePoint> points = CustomBezier.calculateBezierCurve(
-                PointsSingleton.getInstance().getItems(), 0.0002);
+                PointsSingleton.getInstance().getItems(), 0.002);
         if (points.size() < 2) return;
         gc.beginPath();
         gc.moveTo(points.get(0).getX(), points.get(0).getY());
